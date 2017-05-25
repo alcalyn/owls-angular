@@ -1,0 +1,22 @@
+{
+  "name": "owls-angular",
+  "version": "1.0.0",
+  "description": "Owls game angular module for Eole.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alcalyn/owls-angular.git"
+  },
+  "keywords": [
+    "eole"
+  ],
+  "author": "alcalyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alcalyn/owls-angular/issues"
+  },
+  "homepage": "https://github.com/alcalyn/owls-angular#readme",
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}

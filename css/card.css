@@ -1,0 +1,41 @@
+.card-row {
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 12px;
+}
+.card {
+    float: left;
+    margin-right: 8px;
+    width: 36px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+.card .number {
+    width: 100%;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+.card {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.card.color-0 {
+    background-color: #C5853B;
+}
+.card.color-1 {
+    background-color: #0A52A3;
+}
+.card.color-2 {
+    background-color: #6E6D04;
+}
+.card.color-3 {
+    background-color: #98118D;
+}
+.card.color-4 {
+    background-color: #C60816;
+}
+.card.color-5 {
+    background-color: #A3A0A0;
+}

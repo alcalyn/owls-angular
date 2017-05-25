@@ -1,0 +1,85 @@
+<div id="owls">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9 col-md-push-3">
+                <div class="owls-container">
+                    <div class="owls-bets">
+                        <div ng-class="{'highlight': canIBet()}">
+                            <div class="card-container">
+                                <div class="card-row">
+                                    <div
+                                        ng-repeat="owl in table.owls"
+                                        ng-click="playBet(owl)"
+                                        ng-class="['card', 'color-' + owl.color, {'clickable': canIBet(owl)}, {'eliminated': false === owl.alive}]"
+                                    >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bets-container">
+                                <ol
+                                    ng-repeat="owl in table.owls"
+                                    ng-click="playBet(owl)"
+                                    ng-class="['bets', {'clickable': canIBet(owl), 'invisible': !owl.alive}, 'list-unstyled', 'list-inline']"
+                                >
+                                    <li
+                                        ng-repeat="n in [0, 1, 2, 3]"
+                                        class="bet {{ owl.bets[n] ? 'player-' + playerPosition(eoleParty, owl.bets[n].player.eole_player) : '' }}"
+                                    ></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-container">
+                        <div class="card-row">
+                            <div
+                                ng-repeat-start="owl in table.owls"
+                                ng-if="owl.deck_card"
+                                ng-class="['card', 'color-' + owl.deck_card.card.color, {'invisible': !owl.alive}]"
+                            >
+                                <p class="number">{{ owl.deck_card.card.number }}</p>
+                            </div>
+                            <div
+                                ng-repeat-end
+                                ng-if="!owl.deck_card"
+                                ng-class="['card', {'invisible': !owl.alive}]"
+                            >
+                            </div>
+                        </div>
+                        <div class="card-row">
+                            <div ng-class="[{'highlight': canIPlayCard()}, 'clearfix']">
+                                <div
+                                    ng-repeat="card in hand"
+                                    ng-click="playCard(card)"
+                                    ng-class="['card', 'color-' + card.color, {'clickable': canIPlayCard()}]"
+                                >
+                                    <p class="number">{{ card.number }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-md-pull-9">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th style="width: 42px"></th>
+                            <th>{{ 'player'|translate }}</th>
+                            <th>{{ 'score'|translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="slot in eoleParty.slots track by $index" ng-class="{ info: slot.player === eoleParty.slots[table.player_turn].player }">
+                            <td><div class="bet player-{{ $index }}"></div></td>
+                            <td ng-class="{'winner': winners.indexOf(slot.id) !== -1}">
+                                {{ slot.player.username }}
+                                <span ng-if="winners.indexOf(slot.id) !== -1">winner</span>
+                            </td>
+                            <td>{{ slot.score }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

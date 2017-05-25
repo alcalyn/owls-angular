@@ -1,0 +1,59 @@
+#owls {
+    margin-top: 1em;
+}
+#owls .owls-container {
+    display: block;
+    margin: auto;
+    width: 270px;
+    text-align: center;
+}
+#owls .owls-bets {
+    margin-bottom: 12px;
+}
+#owls .bets-container {
+    display: inline-block;
+}
+#owls .highlight {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: -5px;
+    padding: 5px;
+}
+#owls .eliminated {
+    opacity: 0.1;
+}
+#owls .invisible {
+    opacity: 0;
+}
+#owls .bets {
+    float: left;
+    margin: 0 8px 0 0;
+    width: 36px;
+}
+#owls .bet {
+    display: block;
+    float: left;
+    padding: 0;
+    width: 18px;
+    height: 20px;
+}
+#owls .bets li.bet {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+#owls .bets li.bet:first-child,
+#owls .bets li.bet:last-child
+{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+#owls .player-0 {
+    background-color: #f00 !important;
+}
+#owls .player-1 {
+    background-color: #0f0 !important;
+}
+#owls .player-2 {
+    background-color: #00f !important;
+}
+#owls .winner {
+    font-weight: bold;
+}
