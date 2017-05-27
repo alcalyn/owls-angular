@@ -9,7 +9,7 @@
         var eolePartyPromise = null;
         var tablePromise = null;
         var handPromise = null;
-        var betPromise = null;
+        var betPromise = $q.resolve();
 
         $scope.eolePlayer = eoleSession.player;
         $scope.eoleParty = null;
