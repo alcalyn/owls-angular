@@ -1,15 +1,13 @@
 /* global angular */
 /* global window */
 
-(function (angular, relativePath) {
+(function (angular) {
     'use strict';
 
-    var viewsPath = relativePath('/views');
-
-    angular.module('eole.games.owls').config(function ($routeProvider) {
+    angular.module('eole.games.owls').config(function ($routeProvider, gamePath) {
         $routeProvider.when('/games/owls/parties/:partyId', {
             controller: 'owls.PartyController',
-            templateUrl: viewsPath + '/party.html'
+            templateUrl: gamePath+'/views/party.html'
         });
     });
-})(angular, window.relativePath);
+})(angular);

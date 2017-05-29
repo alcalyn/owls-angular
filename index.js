@@ -6,6 +6,9 @@ module.exports = {
             path.resolve(__dirname, 'css/card.css'),
             path.resolve(__dirname, 'css/owls.css')
         ],
+        templates: [
+            'views/*.html'
+        ],
         js: [
             path.resolve(__dirname, 'module.js'),
             path.resolve(__dirname, 'routes.js'),
